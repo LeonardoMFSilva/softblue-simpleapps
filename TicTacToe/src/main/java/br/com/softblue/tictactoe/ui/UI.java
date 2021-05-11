@@ -16,9 +16,9 @@ public class UI {
     } // usado para quebra de linha, usando apenas o sout/sysout
 
     public static void printGameTitle(){
-        printText("============");
+        printText("==================");
         printText("| Jogo da Velha |");
-        printText("============");
+        printText("==================");
         printNewLine();
     }
 

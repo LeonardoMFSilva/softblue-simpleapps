@@ -1,6 +1,7 @@
 package br.com.softblue.tictactoe.core;
 
 import br.com.softblue.tictactoe.Constants;
+import br.com.softblue.tictactoe.ui.UI;
 
 public class Game {
 
@@ -9,6 +10,7 @@ public class Game {
 
 
     public void play(){
-
+        UI.printGameTitle();
+        UI.readInput("Nome do jogador:");
     }
 }
