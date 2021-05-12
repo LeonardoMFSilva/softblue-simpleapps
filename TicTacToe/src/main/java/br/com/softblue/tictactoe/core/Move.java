@@ -2,6 +2,15 @@ package br.com.softblue.tictactoe.core;
 
 public class Move {
 
-    int i;
-    int j;
+    private int i;
+
+    public int getI() {
+        return i;
+    }
+
+    public int getJ() {
+        return j;
+    }
+
+    private int j;
 }

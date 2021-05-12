@@ -5,11 +5,14 @@ import br.com.softblue.tictactoe.ui.UI;
 
 public class Board {
 
+    private char [][] matrix;
+
     public Board(){
+        matrix = new char[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
         clear();
     }
 
-    char [][] matrix = new char[Constants.BOARD_SIZE][Constants.BOARD_SIZE];
+
     public void clear(){
         for (int i = 0; i < matrix.length; i++){
             for (int j = 0; j < matrix[i].length; j++){
@@ -49,10 +52,10 @@ public class Board {
     }
 
     public boolean play(Player player, Move move){
-        int i = move.i;
-        int j = move.i;
+        int i = move.getI();
+        int j = move.getI();
 
-        matrix[i][j] = player.symbol;
+        matrix[i][j] = player.getSymbol();
         //TODO Check if the player won
         return false;
     }
