@@ -6,12 +6,18 @@ public class Player {
     private char symbol;
     private Board board;
 
+    public Player(String name, char symbol, Board board) {
+        this.name = name;
+        this.symbol = symbol;
+        this.board = board;
+    }
+
     public char getSymbol() {
         return symbol;
     }
 
     public Move inputMove(){
-        return null;
+
     }
 
     public void play(){
