@@ -5,7 +5,7 @@ public class Move {
     private int i;
     private int j;
 
-    public Move(String moveStr, int i, int j) {
+    public Move(String moveStr) {
         String[] tokens = moveStr.split(",");
         this.i = Integer.parseInt(tokens[i]);
         this.j = Integer.parseInt(tokens[j]);

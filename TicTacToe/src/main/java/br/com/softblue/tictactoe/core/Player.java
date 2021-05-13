@@ -1,5 +1,7 @@
 package br.com.softblue.tictactoe.core;
 
+import br.com.softblue.tictactoe.ui.UI;
+
 public class Player {
 
     private String name;
@@ -12,16 +14,18 @@ public class Player {
         this.board = board;
     }
 
-    public char getSymbol() {
-        return symbol;
-    }
-
-    public Move inputMove(){
-
+    private Move inputMove(){
+        String moveStr = UI.readInput("Jogador '" + name + "' =>");
+        return new Move(moveStr);
     }
 
     public void play(){
+        Move move = inputMove();
+        board.play(this, move);
+    }
 
+    public char getSymbol() {
+        return symbol;
     }
 
     public String getName() {
