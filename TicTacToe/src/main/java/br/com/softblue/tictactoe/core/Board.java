@@ -53,7 +53,7 @@ public class Board {
 
     public boolean play(Player player, Move move){
         int i = move.getI();
-        int j = move.getI();
+        int j = move.getJ();
 
         //TODO Validar os movimentos
 
@@ -74,8 +74,9 @@ public class Board {
 
     private boolean checkRows(Player player){
         for (int i = 0; i <  Constants.BOARD_SIZE; i++) {
-            if(checkRow(i, player));
-            return true;
+            if(checkRow(i, player)) {
+                return true;
+            }
         }
         return false;
     }
@@ -92,8 +93,9 @@ public class Board {
 
     private boolean checkCols(Player player){
         for (int j = 0; j <  Constants.BOARD_SIZE; j++) {
-            if(checkCol(j, player));
-            return true;
+            if(checkCol(j, player)) {
+                return true;
+            }
         }
         return false;
     }
@@ -112,12 +114,12 @@ public class Board {
     private boolean checkSecondDiag(Player player){
         char symbol = player.getSymbol();
         int lastLine = Constants.BOARD_SIZE - 1;
-        for (int i = lastLine, j = 0; i > 0; i--, j++) {
+        for (int i = lastLine, j = 0; i >= 0; i--, j++) {
             if (matrix[i][j] != symbol){
                 return false;
             }
         }
-        return false;
+        return true;
     }
 
 }
