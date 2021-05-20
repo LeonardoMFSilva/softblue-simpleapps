@@ -7,8 +7,8 @@ public class Move {
 
     public Move(String moveStr) {
         String[] tokens = moveStr.split(",");
-        this.i = Integer.parseInt(tokens[i]);
-        this.j = Integer.parseInt(tokens[j]);
+        this.i = Integer.parseInt(tokens[0]);
+        this.j = Integer.parseInt(tokens[1]);
 
         //TODO Validar se a estrutura do move está correta.
     }
