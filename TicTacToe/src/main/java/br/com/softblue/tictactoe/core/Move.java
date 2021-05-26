@@ -2,8 +2,8 @@ package br.com.softblue.tictactoe.core;
 
 public class Move {
 
-    private int i;
-    private int j;
+    private final int i;
+    private final int j;
 
     public Move(String moveStr) throws InvalidMoveException {
         try {
