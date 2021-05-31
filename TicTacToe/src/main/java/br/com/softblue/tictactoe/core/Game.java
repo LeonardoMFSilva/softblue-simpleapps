@@ -1,6 +1,7 @@
 package br.com.softblue.tictactoe.core;
 
 import br.com.softblue.tictactoe.Constants;
+import br.com.softblue.tictactoe.score.ScoreManager;
 import br.com.softblue.tictactoe.ui.UI;
 
 public class Game {
@@ -8,6 +9,7 @@ public class Game {
     private Board board = new Board();
     private Player[] players = new Player[Constants.SYMBOL_PLAYERS.length];
     private int currentPlayerIndex = -1;
+    private ScoreManager scoreManager;
 
     public void play(){
         UI.printGameTitle();
