@@ -12,6 +12,7 @@ public class Game {
     private ScoreManager scoreManager;
 
     public void play(){
+        scoreManager = createScoreManager();
         UI.printGameTitle();
 
         for (int i = 0; i < players.length; i++) {
@@ -45,6 +46,8 @@ public class Game {
             UI.printText("Deu velha!");
         } else {
             UI.printText("O jogador " + winner.getName() + " venceu!");
+
+            scoreManager.saveScore(winner);
         }
 
         board.print();
@@ -55,6 +58,12 @@ public class Game {
         String name = UI.readInput("Jogador" + (index + 1 ) + "=>");
         char symbol = Constants.SYMBOL_PLAYERS[index];
         Player player = new Player(name, symbol, board);
+        Integer score = scoreManager.getScore(player);
+
+        if (score != null){
+            UI.printText("O jogador " + player.getName() + " já possui " + score + " vitória(s)!");
+        }
+
         UI.printText("O jogador " + name + " vai usar o símbolo " + symbol);
 
         return player;
@@ -82,5 +91,10 @@ public class Game {
         // 3/3 resto = 0 (primeiro indice)
         currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
         return players[currentPlayerIndex];
+    }
+
+    private ScoreManager createScoreManager(){
+        //TODO retornar tipo correto
+        return null;
     }
 }
