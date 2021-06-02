@@ -3,11 +3,13 @@ package br.com.softblue.tictactoe.score;
 import br.com.softblue.tictactoe.core.Player;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class FileScoreManager implements ScoreManager{
 
@@ -35,11 +37,28 @@ public class FileScoreManager implements ScoreManager{
 
     @Override
     public Integer getScore(Player player) {
-        return null;
+        return scoreMap.get(player.getName().toUpperCase());
     }
 
     @Override
-    public void saveScore(Player player) {
+    public void saveScore(Player player) throws IOException {
+        Integer socre = getScore(player);
 
+        if (socre == null){
+            socre = 0;
+        }
+
+        scoreMap.put(player.getName().toUpperCase(), socre + 1);
+
+        try (BufferedWriter writer = Files.newBufferedWriter(SCORE_FILE)){
+            Set<Map.Entry<String, Integer>> entries = scoreMap.entrySet();
+
+            for (Map.Entry<String, Integer> entry : entries){
+                String name = entry.getKey().toUpperCase();
+                Integer s = entry.getValue();
+                writer.write(name + "|" + s);
+                writer.newLine();
+            }
+        }
     }
 }
