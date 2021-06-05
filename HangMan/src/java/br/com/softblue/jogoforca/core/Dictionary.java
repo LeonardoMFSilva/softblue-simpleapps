@@ -1,5 +1,7 @@
 package br.com.softblue.jogoforca.core;
 
+import br.com.softblue.jogoforca.game.GameException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +16,11 @@ public class Dictionary {
                      new Scanner(getClass().getResourceAsStream("/" + FILE_NAME))) {
            while (scanner.hasNextLine()) {
                String word = scanner.nextLine().trim();
+               words.add(word);
+           }
+
+           if (words.size() == 0){
+                throw new GameException("A lista de palavras não pode ser vazia!");
            }
        }
     }
