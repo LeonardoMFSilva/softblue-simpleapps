@@ -1,6 +1,7 @@
 package br.com.softblue.jogoforca.core;
 
 import br.com.softblue.jogoforca.game.GameException;
+import br.com.softblue.jogoforca.utils.RandomUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +26,9 @@ public class Dictionary {
        }
     }
 
+    public Word nextWord(){
+        int pos = RandomUtils.newRandomNumber(0, words.size());
+        return new Word(words.get(pos));
+    }
 
 }
