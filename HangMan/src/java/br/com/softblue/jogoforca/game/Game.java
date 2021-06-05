@@ -1,20 +1,15 @@
 package br.com.softblue.jogoforca.game;
 
+import br.com.softblue.jogoforca.core.Dictionary;
 import br.com.softblue.jogoforca.core.Word;
 
 public class Game {
 
     public void start(){
 
-        Word word = new Word("casa");
-        word.hasChar('a');
-        word.hasChar('c');
-        word.hasChar('s');
-
-        System.out.println(word);
-        System.out.println(word.discovered());
-
-
+        Dictionary d1 = Dictionary.getInstance();
+        Word w1 = d1.nextWord();
+        System.out.println(w1.getOriginalWord());
 
     }
 
