@@ -18,4 +18,8 @@ public class Config {
     public static String get(String name){
         return properties.getProperty(name);
     }
+
+    public static void setMaxErrors(String maxErrors){
+        properties.setProperty("maxErrors", maxErrors);
+    }
 }
