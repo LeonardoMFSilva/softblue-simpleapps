@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Mes {
+public class Mes implements Comparable<Mes>{
 
     private String nome;
     private int numero;
@@ -24,15 +24,12 @@ public class Mes {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Mes mes = (Mes) o;
-        return numero == mes.numero && nome.equals(mes.nome);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, numero);
+    public int compareTo(Mes o) {
+         if (this.numero < o.numero){
+             return -1;
+         } else if (this.numero > o.numero){
+             return 1;
+         }
+         return 0;
     }
 }
