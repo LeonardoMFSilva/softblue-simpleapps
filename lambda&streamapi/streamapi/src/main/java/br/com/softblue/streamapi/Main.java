@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> names = List.of("Leonardo", "Joana", "Ana", "José", "Amanda", "Laila");
+        List<String> names = List.of("Leonardo", "Joana", "Antonia", "José", "Amanda", "Laila");
 
         List<String> filteredNames = names.stream()
                 .filter(w -> w.startsWith("J"))
