@@ -19,11 +19,11 @@ public class Car {
     }
 
     public void addTax(){
-        price = price += price * 01;
+        price = price += price * 0.1;
     }
 
     @Override
     public String toString(){
-        return "Carro [brand=" + brand + ", price=" + price + "]";
+        return "Carro [brand: " + brand + ", price: " + price + "]";
     }
 }
