@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <form method="POST" action="#" name="meu_form">
+
+        Nome completo:
+        <input type="text" name="campo_nome"><br>
+
+        Sexo:
+        <input type="radio" name="campo_sexo" value="M"> Masculino
+        <input type="radio" name="campo_sexo" value="F"> Feminino
+        <input type="radio" name="campo_sexo" value="NB"> Não Binário
+        <input type="radio" name="campo_sexo" value="ND"> Não desejo declarar
+
+        <input type="checkbox" name="campo_maior_idade" id="campo_maior_idade" value="maior" checked>
+        Delcaro ser maior de 18 anos <br>
+
+        Como conheceu o site?
+        <select name="campo_como" id="campo_como">
+            <option value="Nenhum">Selecione...</option>
+            <option value="Indica">Indicação</option>
+            <option value="Outro">Outro site</option>
+            <option value="Search">Sites de busca</option>
+        </select><br>
+
+        <input type="reset" name="limpar" id="limpar">
+        <input type="button" name="enviar" id="enviar" value="Enviar"> 
+    </form>
+</body>
+</html>
